@@ -60,6 +60,17 @@ if (version_compare(phpversion(), MATERIALIS_THEME_REQUIRED_PHP_VERSION, '>=')) 
 	add_action('admin_notices', 'materialis_php_version_notice');
 }
 
+function my_login_logo() { ?>
+	<style type="text/css">
+		#login h1 a, .login h1 a {
+			background-image: url('https://www.otimaideia.com.br/wp-content/uploads/2020/05/logo.png');
+			background-size: auto;
+			width: auto;
+			height: 70px;
+		}
+	</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 function theme_css()
 {
