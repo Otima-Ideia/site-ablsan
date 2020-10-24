@@ -1,9 +1,70 @@
-html,
-body {
+/* Probably gonna be a 404 */
+
+@font-face {
+  font-family: NexaRegular;
+  src: url('/site-ablsan/wp-content/themes/ablsan/assets/fonts/Nexa-Font/NexaRegular.otf');
+}
+
+@font-face {
+  font-family: NexaBold;
+  src: url('/site-ablsan/wp-content/themes/ablsan/assets/fonts/Nexa-Font/NexaBold.otf');
+}
+
+html {
+  margin-top: 0!important;
+}
+
+html, body {
+  font-family: NexaRegular;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   background-color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-wpp {
+  color: #fff;
+  background-color: #5bd6d4;
+  border-color: #5bd6d4;
+}
+
+.btn-wpp:hover {
+  color: #fff;
+  background-color: #39b8b6;
+  border-color: #117a8b;
+}
+
+.btn-wpp:focus, .btn-wpp.focus {
+  color: #fff;
+  background-color: #39b8b6;
+  /*border-color: #117a8b;*/
+  box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.btn-wpp.disabled, .btn-wpp:disabled {
+  color: #fff;
+  background-color: #5bd6d4;
+  border-color: #5bd6d4;
+}
+
+.btn-wpp:not(:disabled):not(.disabled):active, .btn-wpp:not(:disabled):not(.disabled).active,
+.show > .btn-wpp.dropdown-toggle {
+  color: #fff;
+  background-color: #117a8b;
+  border-color: #10707f;
+}
+
+.btn-wpp:not(:disabled):not(.disabled):active:focus, .btn-wpp:not(:disabled):not(.disabled).active:focus,
+.show > .btn-wpp.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.w-100 {
+  width: 100% !important;
 }
 
 #topbar ul {
@@ -15,35 +76,56 @@ body {
   color: white;
   padding: 0.5rem 0;
 }
+
 #topbar ul li.divider {
   height: 24px;
   width: 1px;
   background-color: white;
 }
+
 #topbar ul li {
   margin: 0 0.5rem;
 }
 
-#navbar {
-  display: flex;
+#like-jumbotron {
+  /*display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: white;*/
+  position: relative;
+  padding-top: 3.5rem;
+  min-height: 650px;
+  background-image: url('http://localhost/site-ablsan/wp-content/uploads/2020/10/bg-unitah2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+#navbar {
+  display: flex;
+}
+
 #navbar figure {
   background-color: transparent;
+  height: 58px;
+  margin: 0;
+  padding-left: 2rem;
 }
+
 #navbar figure img {
   width: 300px;
   height: auto;
 }
+
 #navbar ul {
-  padding: 0.5rem 0;
+  padding: 1.9% 0;
+  margin: 0;
   background-color: white;
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
+  margin: 0!important;
 }
+
 #navbar ul a {
   text-decoration: none;
   color: black;
@@ -51,6 +133,40 @@ body {
   transition: color 0.2s;
   text-transform: uppercase;
 }
+
 #navbar ul a:hover {
   color: #e30510;
+}
+
+#navbar ul li a {
+  font-family: NexaBold, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-ul-container {
+  width: 100%;
+  padding-right: 2rem;
+  height: max-content;
+}
+
+.estacoes-info {
+  height: max-content;
+  position: absolute;
+  bottom: 55px !important;
+  left: 60px !important;
+}
+
+.estacoes-info a.btn {
+  position: absolute;
+  margin-left: 4rem;
+  width: max-content;
+  padding: 1rem 4.5rem;
+  border: 1px solid;
+  border-radius: 0;
+}
+
+.unitah-infos {
+  height: 320px;
+  width: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
