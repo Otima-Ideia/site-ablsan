@@ -48,3 +48,4 @@ RewriteRule . /site-ablsan/index.php [L]
   AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
+php_value max_execution_time 300

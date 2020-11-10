@@ -31,7 +31,7 @@
 </div>
 <div class="container-fluid" style="background-color: #ebebeb;">
     <section style="display: flex; justify-content: center;">
-        <article class="unitah-infos" style="background-image: url('<?= get_template_directory_uri() ?> . /assets/img/Imagem1-2.png');">
+        <article class="unitah-infos" style="background-image: url('<?= get_template_directory_uri() ?> . /assets/img/Imagem1-2.png'); background-size: cover;">
         </article>
     </section>
 </div>
@@ -47,14 +47,22 @@
 </div>
 <div class="container-fluid" style="background-color: #fff;">
     <div class="container py-5">
+        <div class="row pb-4">
+            <h1>CONTATO</h1>
+            <div class="w-100"></div>
+            <h5 style="font-size: 1rem;">Deixe sua mensagem para nós, nossa equipe terá o prazer de atendê-lo em breve.</h5>
+        </div>
+
         <section class="row">
             <article class="col-lg-8">
-                <h2>CONTATO</h2>
-                <h5 style="font-size: 1rem;">Deixe sua mensagem para nós, nossa equipe terá o prazer de atendê-lo em breve.</h5>
+                <div style="padding-right: 4rem;padding-left: 4rem;">
+                    <?php echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]') ?>
+                </div>
             </article>
             <aside class="col-lg-4">
                 <article class="col-lg">
                     <a href="#" class="btn btn-wpp">Atendimento via WhatsApp</a>
+                    <?php echo do_shortcode('[mailpoet_form id="1"]')?>
                 </article>
             </aside>
         </section>
