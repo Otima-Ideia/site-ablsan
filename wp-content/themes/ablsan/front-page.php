@@ -2,9 +2,10 @@
 
 <div class="container-fluid" style="background-color: #fff;">
     <div class="container py-5">
-        <section class="row">
+        <section class="row ablsan-row-infos">
             <article class="col-lg-8">
-                <h2>A ABLSAN</h2>
+                <hr class="red">
+                <h2 class="headline">A ABLSAN</h2>
                 <p>A ABLSAN é uma empresa de atuação Full Service em empreendimentos imobiliários voltados ao varejo, fornecendo 5 campos de atuação completamente integrados através da expertise de sua equipe: planejamento, desenvolvimento, comercialização, implantação e gestão de shopping centers.
 
                     Fundada em 2005 como uma empresa de comercialização de espaços em shopping centers, a ABLSAN passou rapidamente a ser reconhecida pela visão inovadora em prevenir e resolver problemas, maximizando o retorno dos empreendimentos em que atuou.
@@ -13,16 +14,19 @@
                 </p>
             </article>
             <aside class="col-lg-4">
-                <article class="col-lg">
-                    <h2>MISSÃO</h2>
+                <article class="col-lg" style="position: relative;">
+                    <hr class="red">
+                    <h2 class="headline">MISSÃO</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea itaque obcaecati, est dolores molestiae, ducimus sapiente molestias nemo nihil, sunt numquam optio dicta ab nesciunt quidem magnam ratione illum quos.</p>
                 </article>
-                <article class="col-lg">
-                    <h2>VISÃO</h2>
+                <article class="col-lg" style="position: relative;">
+                    <hr class="red">
+                    <h2 class="headline">VISÃO</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quaerat itaque amet commodi vero, distinctio maiores accusamus atque dignissimos asperiores ad laboriosam voluptate? Sint cum asperiores molestiae laudantium totam veritatis!</p>
                 </article>
-                <article class="col-lg">
-                    <h2>VALORES</h2>
+                <article class="col-lg" style="position: relative;">
+                    <hr class="red">
+                    <h2 class="headline">VALORES</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quos alias nam temporibus eaque ad tenetur, vero, esse sed ex enim dicta excepturi nemo doloribus! Vero harum iusto porro molestiae.</p>
                 </article>
             </aside>
@@ -31,7 +35,16 @@
 </div>
 <div class="container-fluid" style="background-color: #ebebeb;">
     <section style="display: flex; justify-content: center;">
-        <article class="unitah-infos" style="background-image: url('<?= get_template_directory_uri() ?> . /assets/img/Imagem1-2.png'); background-size: cover;">
+        <article style="background-image: url('http://localhost/site-ablsan/wp-content/themes/ablsan . /assets/img/Imagem1-2.png'); background-size: cover;" class="row unitah-infos">
+            <div class="col-lg-4">
+                <p class="unitah-item-info">Mais de <span style="font-size: 2.5rem;">2000</span><br><span style="font-size: .75rem;">Lojas comercializadas</span></p><a href="" class="btn btn-enviar" style="margin-bottom: 1.75rem;/*! justify-content: center; */font-size: .85rem;">Entre em contato</a>
+            </div>
+            <div class="col-lg-4">
+                <p class="unitah-item-info">Mais de <span style="font-size: 2.5rem;">50</span><br><span style="font-size: .75rem;">Shoppings Comercializadas</span></p><a href="" style="margin-bottom: 1.75rem;/*! justify-content: center; */font-size: .85rem;" class="btn btn-light">Entre em contato</a>
+            </div>
+            <div class="col-lg-4">
+                <p class="unitah-item-info">Mais de <span style="font-size: 2.5rem;">30</span><br><span style="font-size: .75rem;">Shoppings em comercialização</span></p><a href="" class="btn btn-enviar" style="margin-bottom: 1.75rem;/*! justify-content: center; */font-size: .85rem;">Entre em contato</a>
+            </div>
         </article>
     </section>
 </div>
@@ -62,7 +75,7 @@
             <aside class="col-lg-4">
                 <article class="col-lg">
                     <a href="#" class="btn btn-wpp">Atendimento via WhatsApp</a>
-                    <?php echo do_shortcode('[mailpoet_form id="1"]')?>
+                    <?php echo do_shortcode('[mailpoet_form id="1"]') ?>
                 </article>
             </aside>
         </section>

@@ -311,6 +311,47 @@ textarea.form-control.is-invalid {
     box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
 }
 
+.btn-light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-light:hover {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}
+
+.btn-light:focus,
+.btn-light.focus {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+}
+
+.btn-light.disabled,
+.btn-light:disabled {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-light:not(:disabled):not(.disabled):active,
+.btn-light:not(:disabled):not(.disabled).active,
+.show>.btn-light.dropdown-toggle {
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #d3d9df;
+}
+
+.btn-light:not(:disabled):not(.disabled):active:focus,
+.btn-light:not(:disabled):not(.disabled).active:focus,
+.show>.btn-light.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+}
+
 .btn-dark {
     color: #fff;
     background-color: #343a40;
@@ -478,6 +519,10 @@ textarea.form-control.is-invalid {
     height: max-content;
 }
 
+.ablsan-row-infos article p:first-of-type {
+    margin-top: 2rem;
+}
+
 .estacoes-info {
     height: max-content;
     position: absolute;
@@ -496,7 +541,51 @@ textarea.form-control.is-invalid {
 
 .unitah-infos {
     height: 320px;
-    width: 50%;
+    width: 670px;
     background-size: contain;
     background-repeat: no-repeat;
+    color: #fff;
+}
+
+.unitah-infos .col-lg-4 {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.unitah-item-info {
+    margin-top: 10rem;
+    text-align: center;
+    line-height: 24px;
+}
+
+.hl {
+    border-left: 2px solid rgba(226, 6, 19);
+    width: 100%;
+    /*position: absolute;
+    left: 98.2%;
+    margin-left: -3px;
+    top: 3%;*/
+}
+
+hr.red {
+    border: 1px solid red;
+}
+
+.headline {
+    background-color: #fff;
+    position: relative;
+    margin: -25px 0 0 50px;
+    float: left;
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+    .unitah-infos .col-lg-4 {
+        flex-direction: column;
+        align-items: center;
+    }
 }
