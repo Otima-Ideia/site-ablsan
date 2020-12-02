@@ -123,8 +123,8 @@ a {
 }
 
 a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  /*color: #0056b3;
+  text-decoration: underline;*/
 }
 
 a:not([href]):not([class]) {
@@ -835,4 +835,13 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
     color: #fff;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+small,
+.small {
+  font-size: 80%;
+  font-weight: 400;
 }
