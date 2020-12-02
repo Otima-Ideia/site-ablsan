@@ -10,7 +10,7 @@
     src: url('/site-ablsan/wp-content/themes/ablsan/assets/fonts/Nexa-Font/NexaBold.otf');
 }
 
-:root{
+:root {
     --dark: #343a40;
 }
 
@@ -425,6 +425,26 @@ textarea.form-control {
     background-size: cover;
 }
 
+.banner-comercializacao {
+    position: relative;
+    /*padding-top: 3.5rem;*/
+    min-height: 170px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.navbar-ul-detail {
+    height: 100%;
+    position: absolute;
+    left: -15px;
+}
+
 #navbar {
     display: flex;
 }
@@ -442,18 +462,30 @@ textarea.form-control {
 }
 
 #navbar ul {
-    padding: 1.9% 0;
+    /*padding: 1.9% 0;*/
+    height: 58px;
     margin: 0;
     background-color: white;
     display: flex;
     list-style-type: none;
     justify-content: flex-end;
+    align-items: center;
     margin: 0!important;
+    font-size: .75rem;
+    padding-right: 15%;
 }
 
 #navbar ul a {
     text-decoration: none;
     color: black;
+    padding: 0 0.5rem;
+    transition: color 0.2s;
+    text-transform: uppercase;
+}
+
+#navbar ul.ul-white a {
+    text-decoration: none;
+    color: #FFF;
     padding: 0 0.5rem;
     transition: color 0.2s;
     text-transform: uppercase;
@@ -529,6 +561,10 @@ textarea.form-control {
     top: 3%;*/
 }
 
+.headline-header-text-1 {
+    font-size: 1.75rem;
+}
+
 .headline.headline-ml {
     margin-left: 3rem;
 }
@@ -560,6 +596,24 @@ hr.red {
 .recent-post {
     flex-direction: column;
     font-size: .85rem;
+}
+
+/* TRABALHOS */
+
+#carouselTrabalhos .control-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #FFF;
+    padding: 1rem;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#carouselTrabalhos .carousel-item span {
+    position: absolute;
+    top: -42px;
+    left: 70px;
 }
 
 /* Small devices (landscape phones, less than 768px) */

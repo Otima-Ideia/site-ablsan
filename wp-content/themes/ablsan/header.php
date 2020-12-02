@@ -9,7 +9,11 @@
   </head>
 
   <body <?php body_class(); ?>>
-      <?php get_template_part('template-parts/topbar'); ?>
-      <?php get_template_part('template-parts/navbar'); ?>
+      <?php if (is_front_page()) {
+            get_template_part('template-parts/topbar');
+            get_template_part('template-parts/navbar-jumbotron');
+        } else {
+            get_template_part('template-parts/topbar');
+            get_template_part('template-parts/navbar-white');
+        }?>
       <main role="main">
-          
