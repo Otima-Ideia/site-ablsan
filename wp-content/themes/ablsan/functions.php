@@ -16,6 +16,7 @@ add_action('login_enqueue_scripts', 'my_login_logo');
 function theme_css()
 {
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css');
+    /*wp_enqueue_style('bootstrap2', get_template_directory_uri() . '/assets/css/bootstrap.min.css');*/
     wp_enqueue_style('bootstrap-stuffs', get_template_directory_uri() . '/assets/css/bootstrap-stuffs.css');
     wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/style.css', '', false, 'screen');
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js');
