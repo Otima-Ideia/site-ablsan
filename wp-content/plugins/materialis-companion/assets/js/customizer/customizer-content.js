@@ -28,7 +28,7 @@
 
         var $contentLi = control.container.eq(0);
         // remove default events
-        $contentLi.children('h3').andSelf().off();
+        $contentLi.children('h3').addBack().off();
 
         $sectionsSidebarTogglers = $contentLi.find('.add-section-plus').add($contentLi.find('.cp-add-section'));
 

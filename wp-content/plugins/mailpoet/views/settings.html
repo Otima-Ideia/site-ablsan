@@ -14,6 +14,7 @@
       var mailpoet_mss_key_valid = <%= json_encode(mss_key_valid) %>;
       var mailpoet_premium_key_valid = <%= json_encode(premium_key_valid) %>;
       var mailpoet_premium_plugin_installed = <%= json_encode(premium_plugin_installed) %>;
+      var mailpoet_premium_plugin_download_url = <%= json_encode(premium_plugin_download_url) %>;
       var mailpoet_paths = <%= json_encode(paths) %>;
       var mailpoet_built_in_captcha_supported = <%= json_encode(built_in_captcha_supported == true) %>;
       var mailpoet_free_plan_url = "<%= add_referral_id('https://www.mailpoet.com/free-plan') %>";
@@ -176,12 +177,8 @@
     'premiumTabKeyCannotValidateIntranet': __('This website is on an Intranet. Activating MailPoet will not be possible.'),
     'learnMore': __('Learn more'),
     'premiumTabPremiumActiveMessage': __('MailPoet Premium is active', 'mailpoet'),
-    'premiumTabPremiumInstallingMessage': __('MailPoet Premium plugin is being installed', 'mailpoet'),
-    'premiumTabPremiumActivatingMessage': __('MailPoet Premium plugin is being activated', 'mailpoet'),
     'premiumTabPremiumNotInstalledMessage': __('MailPoet Premium is not installed.', 'mailpoet'),
-    'premiumTabPremiumInstallMessage': __('Install MailPoet Premium plugin', 'mailpoet'),
-    'premiumTabPremiumNotActiveMessage': __('MailPoet Premium is not active.', 'mailpoet'),
-    'premiumTabPremiumActivateMessage': __('Activate MailPoet Premium plugin', 'mailpoet'),
+    'premiumTabPremiumDownloadMessage': __('Download MailPoet Premium plugin', 'mailpoet'),
     'premiumTabPremiumInstallationInstallingMessage': __('downloading MailPoet Premium…', 'mailpoet'),
     'premiumTabPremiumInstallationActivatingMessage': __('activating MailPoet Premium…', 'mailpoet'),
     'premiumTabPremiumInstallationActiveMessage': __('MailPoet Premium is active!', 'mailpoet'),

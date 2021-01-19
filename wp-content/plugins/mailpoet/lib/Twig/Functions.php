@@ -88,6 +88,11 @@ class Functions extends AbstractExtension {
         ['is_safe' => ['all']]
       ),
       new TwigFunction(
+        'wp_date_format',
+        [$this, 'getWPDateFormat'],
+        ['is_safe' => ['all']]
+      ),
+      new TwigFunction(
         'wp_time_format',
         [$this, 'getWPTimeFormat'],
         ['is_safe' => ['all']]
@@ -236,6 +241,9 @@ class Functions extends AbstractExtension {
   public function installedInLastTwoWeeks() {
     $maxNumberOfWeeks = 2;
     $installedAt = Carbon::createFromFormat('Y-m-d H:i:s', $this->settings->get('installed_at'));
+    if ($installedAt === false) {
+      return false;
+    }
     return $installedAt->diffInWeeks(Carbon::now()) < $maxNumberOfWeeks;
   }
 

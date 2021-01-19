@@ -24,28 +24,30 @@ function materialis_gutenberg() {
 
     wp_enqueue_style(
         'materialis-gutenberg',
-        get_stylesheet_directory_uri() . '/gutenberg-style.min.css',
+        get_template_directory_uri() . '/gutenberg-style.min.css',
         array( 'wp-edit-blocks' ),
-        filemtime( get_stylesheet_directory() . '/gutenberg-style.min.css' )
+        materialis_get_version()
     );
 
     wp_enqueue_style(
         'materialis-companion',
         MATERIALIS_GUTENBERG_INTEGRATION_URL . '../../assets/css/companion.bundle.min.css',
         array( 'wp-edit-blocks' ),
-        filemtime( MATERIALIS_GUTENBERG_INTEGRATION_PATH . '../../assets/css/companion.bundle.min.css' )
+        materialis_get_version()
     );   
     
     wp_enqueue_style(
         'materialis-fontawesome',
         get_template_directory_uri() . '/assets/css/material-icons.min.css',
         array( 'wp-edit-blocks' ),
-        filemtime( get_template_directory() .  '/assets/css/material-icons.min.css' )
+        materialis_get_version()
     );
 
-    register_block_type( 'extend/materialis-gutenberg', array(
-        'editor_script' => 'materialis-gutenberg',
-    ) );    
+    if ( function_exists( 'register_block_type' ) ) {
+        register_block_type( 'extend/materialis-gutenberg', array(
+            'editor_script' => 'materialis-gutenberg',
+        ) );
+    }
 }
 
 add_action( 'admin_init', 'materialis_gutenberg' );
@@ -73,7 +75,7 @@ function materialis_gutenberg_keep_comment_before($text)
 function materialis_gutenberg_keep_comment_after($text)
 {
     //from [wp:namespace/block {"option1":1,"option2":"2"}]  to <!-- wp:namespace/block {"option1":1,"option2":"2"}  -->
-    $gutenbergCommentRegex = '#@@(\/?)wp:([\w\/]+)\s+(.*?)@@#';
+    $gutenbergCommentRegex = '#@@(\/?)wp:([\w\/]+)\s+(.*?)( \/ )?@@#';
 
     $text = preg_replace_callback(
         $gutenbergCommentRegex,
@@ -88,13 +90,17 @@ function materialis_gutenberg_keep_comment_after($text)
             //if not theme block and ordinary gutenberg section then wrap in gridContainer
             if (strpos($matches[2], 'extendstudio') === false) 
             {
-                //comment close tag
-                if ($matches[1])
-                {
-                    $return .= '</div>';// . $comment;
-                } else
-                {
-                    $return .= /*$comment . */'<div class="gridContainer">';
+
+            	//single comment close tag
+	            if (trim($matches[3]) == '/') {
+	            	$return .= '<!-- ' . str_replace('@@', '', $matches[0]) . '-->';
+		            //$return = '<div class="gridContainer"> ' . $comment . '</div>';
+	            } else //comment close tag
+	            if ($matches[1]) {
+                    $return .= '</div>' . $comment;
+                } else {//comment start tag
+                    $return .= $comment .
+                        '<div class="gridContainer">';
                 }
             } else $return = '';
             
@@ -106,4 +112,4 @@ function materialis_gutenberg_keep_comment_after($text)
 }
 
 add_filter( 'the_content', 'materialis_gutenberg_keep_comment_before', 5);
-add_filter( 'the_content', 'materialis_gutenberg_keep_comment_after', 20);
+add_filter( 'the_content', 'materialis_gutenberg_keep_comment_after', is_customize_preview() ? 20 : 6);

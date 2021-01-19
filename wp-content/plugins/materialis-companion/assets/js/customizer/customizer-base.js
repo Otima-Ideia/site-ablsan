@@ -2085,7 +2085,7 @@
                     CP_Customizer.preview.pauseObserver();
                     prefix = prefix || 'new_cp_node_';
 
-                    $($node).find("*").andSelf().each(function () {
+                    $($node).find("*").addBack().each(function () {
                         $(this).attr('data-cpid', _.uniqueId(prefix));
                     });
 
@@ -3807,7 +3807,7 @@
                                                         callbacks[0].bind(this)(event, jQuery(this).data().overlay);
                                                     },
                                                     function (event) {
-                                                        var isNodeRelated = jQuery(this).data().overlay.find("*").andSelf().is(event.relatedTarget);
+                                                        var isNodeRelated = jQuery(this).data().overlay.find("*").addBack().is(event.relatedTarget);
                                                         if (isNodeRelated) {
                                                             event.preventDefault();
                                                             event.stopPropagation();

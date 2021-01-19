@@ -418,7 +418,7 @@ class Customizer
                 (function () {
                     window.cpCustomizerPreview = <?php echo json_encode($previewData); ?>;
                     wp.customize.bind('preview-ready', function () {
-                        jQuery(window).load(function () {
+                        jQuery(window).on('load', function () {
 
                             setTimeout(function () {
                                 parent.postMessage('cloudpress_update_customizer', "*");
